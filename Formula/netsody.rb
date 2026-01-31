@@ -8,6 +8,7 @@ class Netsody < Formula
 
   conflicts_with cask: "drasyl-ui"
   conflicts_with formula: "drasyl"
+  conflicts_with formula: ["drasyl", "netsody-beta"]
 
   # Dynamically determine architecture and set appropriate URL
   if Hardware::CPU.arm?

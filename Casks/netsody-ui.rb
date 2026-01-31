@@ -1,7 +1,7 @@
 cask "netsody-ui" do
   desc "Netsody UI - A graphical user interface for Netsody"
   homepage "https://netsody.io"
-  version "latest"
+  version "0.1.0"
   sha256 :no_check
 
   if Hardware::CPU.intel?
