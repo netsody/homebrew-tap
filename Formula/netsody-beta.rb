@@ -1,5 +1,5 @@
 class NetsodyBeta < Formula
-  desc "Netsody provides secure, software-defined overlay networks, connecting all your devices"
+  desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
   version "1.0.0-beta.9"
 

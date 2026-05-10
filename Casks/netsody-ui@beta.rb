@@ -1,5 +1,5 @@
 cask "netsody-ui@beta" do
-  desc "Netsody UI - A graphical user interface for Netsody"
+  desc "Graphical interface for Netsody Zero Trust Network Access"
   homepage "https://netsody.io"
   version "1.0.0-beta.9"
   sha256 :no_check

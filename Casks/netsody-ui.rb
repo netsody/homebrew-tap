@@ -1,5 +1,5 @@
 cask "netsody-ui" do
-  desc "Netsody UI - A graphical user interface for Netsody"
+  desc "Graphical interface for Netsody Zero Trust Network Access"
   homepage "https://netsody.io"
   version "0.1.0"
   sha256 :no_check
@@ -14,4 +14,4 @@ cask "netsody-ui" do
   app "Netsody UI.app"
 
   depends_on formula: "netsody"
-end 
+end
