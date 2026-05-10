@@ -27,8 +27,8 @@ class NetsodyBeta < Formula
     end
   end
 
-  conflicts_with "drasyl", because: "both install `netsody` binaries"
-  conflicts_with "netsody", because: "both install `netsody` binaries"
+  conflicts_with "drasyl/tap/drasyl", because: "both install `netsody` binaries"
+  conflicts_with "netsody/tap/netsody", because: "both install `netsody` binaries"
 
   def install
     mv Dir["*"].first, "netsody"

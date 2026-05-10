@@ -30,7 +30,11 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax
+      - name: Run tap syntax checks
+        run: |
+          brew style netsody/tap
+          brew readall --aliases --os=all --arch=all netsody/tap
+          brew audit --except=installed --except=checksum --tap=netsody/tap
 
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
