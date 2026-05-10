@@ -3,9 +3,6 @@ class NetsodyBeta < Formula
   homepage "https://netsody.io"
   version "1.0.0-beta.9"
 
-  conflicts_with cask: "drasyl-ui"
-  conflicts_with formula: ["drasyl", "netsody"]
-
   on_macos do
     on_arm do
       url "https://download.netsody.io/binaries/macos-arm64/1.0.0-beta.9/netsody"
@@ -18,9 +15,7 @@ class NetsodyBeta < Formula
 
   on_linux do
     on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-beta.9/netsody"
-      end
+      url "https://download.netsody.io/binaries/linux-amd64/1.0.0-beta.9/netsody" if Hardware::CPU.is_64_bit?
     end
 
     on_arm do
@@ -31,6 +26,9 @@ class NetsodyBeta < Formula
       end
     end
   end
+
+  conflicts_with "drasyl", because: "both install `netsody` binaries"
+  conflicts_with "netsody", because: "both install `netsody` binaries"
 
   def install
     mv Dir["*"].first, "netsody"

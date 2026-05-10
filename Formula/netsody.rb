@@ -4,11 +4,9 @@ require "etc"
 class Netsody < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
-  version "0.1.0"
 
-  conflicts_with cask: "drasyl-ui"
-  conflicts_with formula: "drasyl"
-  conflicts_with formula: ["drasyl", "netsody-beta"]
+  conflicts_with "drasyl", because: "both install conflicting TUN devices"
+  conflicts_with "netsody-beta", because: "both install `netsody` binaries"
 
   # Dynamically determine architecture and set appropriate URL
   if Hardware::CPU.arm?
@@ -29,12 +27,12 @@ class Netsody < Formula
   end
 
   def install
-      # Install the pre-built binary for stable releases
-      bin.install "netsody"
-      
-      # Create configuration and log directories
-      (etc/"netsody").mkpath
-      (var/"log").mkpath
+    # Install the pre-built binary for stable releases
+    bin.install "netsody"
+
+    # Create configuration and log directories
+    (etc/"netsody").mkpath
+    (var/"log").mkpath
   end
 
   def post_install
