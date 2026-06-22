@@ -1,35 +1,35 @@
 class NetsodyBeta < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
-  version "1.0.0-rc.1"
+  version "1.0.0-rc.2"
 
   on_macos do
     on_arm do
-      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.1/netsody"
-      sha256 "08bb320eb2b50815028e09e9583f933798ca72b98b821aa260f8cc5f10debfdd"
+      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.2/netsody"
+      sha256 "019d1e3f51e5c9b3a75e3302de620b0572017dd5273d7cfa5317e8945fb2b572"
     end
 
     on_intel do
-      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.1/netsody"
-      sha256 "c49aa8471f4b156bd5c715e597a632a6a2c7a86e22a3e24843e58d371f0fab4d"
+      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.2/netsody"
+      sha256 "4780b7cc225bdfde75075043380f4c319858f7d9dfceb5191180248768c7a72e"
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.1/netsody"
-        sha256 "cb8e77be4ba130fee330c3aabce43ecaa89d2c9b30c81b6f3f255e551115e717"
+        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.2/netsody"
+        sha256 "418ac23a3631cae1da6141910d5bc76d1119ccd714fda596eec2ff6da26e0af1"
       end
     end
 
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.1/netsody"
-        sha256 "8acc62757e7915ca423e30ee6ba879d6f2195a3b7e7a1f05117743d3cf67a87f"
+        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.2/netsody"
+        sha256 "151d9401ced105dbf78bfcdd6861ab8893e0b0ef1ed292856126d58b32a249a1"
       else
-        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.1/netsody"
-        sha256 "d808fd45231c0693e4bf24231ed491a086fa2b622adfdc38727c068b8875e899"
+        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.2/netsody"
+        sha256 "423d069e9b92132b18c6ca2cfb470c27a338a4b0305371c2dd1f85c26b544a36"
       end
     end
   end
