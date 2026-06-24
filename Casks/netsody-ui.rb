@@ -14,6 +14,7 @@ cask "netsody-ui" do
   homepage "https://netsody.io/"
 
   depends_on formula: "netsody"
+  depends_on :macos
 
   app "Netsody UI.app"
 end
