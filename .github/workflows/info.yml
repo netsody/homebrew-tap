@@ -34,7 +34,12 @@ jobs:
             brew info --json "netsody/tap/$name" | jq '.[0]? // .' > "Info/$name.json"
           done
 
-      - uses: stefanzweifel/git-auto-commit-action@v4.1.1
+      # v4.1.1 is from 2021, runs on a Node version GitHub has deprecated, and
+      # ended the run with "the current branch master has no upstream branch"
+      # although the checkout was on the pull request's branch. Naming the branch
+      # explicitly takes the guess out of it.
+      - uses: stefanzweifel/git-auto-commit-action@v7.2.0
         with:
           commit_message: 'Generated formula JSON: `brew info --json <formula>`'
           file_pattern: Info
+          branch: ${{ github.head_ref || github.ref_name }}
