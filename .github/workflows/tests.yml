@@ -30,6 +30,13 @@ jobs:
 
       - run: brew test-bot --only-setup
 
+      # Both formulae declare a conflict with drasyl/tap/drasyl, and `brew deps`
+      # resolves that reference, so without the tap present test-bot stops with
+      # "No available formula with the name drasyl/tap/drasyl". Nothing is
+      # installed from it; it only has to be readable.
+      - name: Tap drasyl, referenced by conflicts_with
+        run: brew tap drasyl/tap
+
       - name: Run tap syntax checks
         run: |
           brew style netsody/tap
