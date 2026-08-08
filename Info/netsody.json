@@ -87,7 +87,7 @@
     "log_path": "/opt/homebrew/var/log/netsody.out.log",
     "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
   },
-  "tap_git_head": "d42780a65e8952ca298533a6f91e8088ebea1035",
+  "tap_git_head": "8b3419bda9c2ef72e3126c040e7af3b87bdbb01c",
   "ruby_source_path": "Formula/netsody.rb",
   "ruby_source_checksum": {
     "sha256": "002313461af4c3efadf60a9e59f7c9a1e3efdee714f6ed4d319e903bc3c9e44f"
