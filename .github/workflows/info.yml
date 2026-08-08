@@ -34,10 +34,16 @@ jobs:
             brew info --json "netsody/tap/$name" | jq '.[0]? // .' > "Info/$name.json"
           done
 
-      # v4.1.1 is from 2021, runs on a Node version GitHub has deprecated, and
-      # ended the run with "the current branch master has no upstream branch"
-      # although the checkout was on the pull request's branch. Naming the branch
-      # explicitly takes the guess out of it.
+      # checkout leaves its token in a conditional include keyed on the gitdir,
+      # and by the time the commit runs it no longer takes effect: the push ends
+      # with "could not read Username for https://github.com". Putting the token
+      # on the remote is explicit and does not depend on what the Homebrew setup
+      # does to the repository's config on its way past.
+      - name: Give the remote a token to push with
+        run: git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+
+      # v4.1.1 was from 2021 and ran on a Node version GitHub has deprecated.
+      # The branch is named explicitly rather than inferred.
       - uses: stefanzweifel/git-auto-commit-action@v7.2.0
         with:
           commit_message: 'Generated formula JSON: `brew info --json <formula>`'
