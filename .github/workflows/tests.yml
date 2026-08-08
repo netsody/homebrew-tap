@@ -30,6 +30,17 @@ jobs:
 
       - run: brew test-bot --only-setup
 
+      # Both formulae declare a conflict with drasyl/tap/drasyl, and `brew deps`
+      # resolves that reference, so without it test-bot stops with "No available
+      # formula with the name drasyl/tap/drasyl". Nothing is installed from it;
+      # it only has to be readable, which since Homebrew started requiring tap
+      # trust means tapping *and* trusting. Trusting the single formula rather
+      # than the whole tap keeps that to what is actually needed.
+      - name: Tap drasyl, referenced by conflicts_with
+        run: |
+          brew tap drasyl/tap
+          brew trust --formula drasyl/tap/drasyl
+
       - name: Run tap syntax checks
         run: |
           brew style netsody/tap

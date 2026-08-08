@@ -1,40 +1,40 @@
 class NetsodyBeta < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
-  version "1.0.0-rc.2"
+  version "1.0.0-rc.3"
 
   on_macos do
     on_arm do
-      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.2/netsody"
-      sha256 "019d1e3f51e5c9b3a75e3302de620b0572017dd5273d7cfa5317e8945fb2b572"
+      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.3/netsody"
+      sha256 "fb2229aab961a7cf43706705a771945cd9a26063d3e732f1a0691945a5b8be01"
     end
 
     on_intel do
-      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.2/netsody"
-      sha256 "4780b7cc225bdfde75075043380f4c319858f7d9dfceb5191180248768c7a72e"
+      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.3/netsody"
+      sha256 "32bf42afef96cc8bae73cb5435a14ad3b6bff953515c3e1950d77c1ac2b67a4c"
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.2/netsody"
-        sha256 "418ac23a3631cae1da6141910d5bc76d1119ccd714fda596eec2ff6da26e0af1"
+        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.3/netsody"
+        sha256 "cd5f064b995ae39792a8ce509769c55c711ea6e72e0850e58352a41dbb4da608"
       end
     end
 
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.2/netsody"
-        sha256 "151d9401ced105dbf78bfcdd6861ab8893e0b0ef1ed292856126d58b32a249a1"
+        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.3/netsody"
+        sha256 "328914ee7bbc8398816d54b77363064daced80fb72981e3a0c7786b2a4baf132"
       else
-        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.2/netsody"
-        sha256 "423d069e9b92132b18c6ca2cfb470c27a338a4b0305371c2dd1f85c26b544a36"
+        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.3/netsody"
+        sha256 "6dee9af3026f134ac9cfb8ce5b113027742e794bd41ccdf5dbd7b9d3fecd0eae"
       end
     end
   end
 
-  conflicts_with "drasyl/tap/drasyl", because: "both install `netsody` binaries"
+  conflicts_with "drasyl/tap/drasyl", because: "both install conflicting TUN devices"
   conflicts_with "netsody/tap/netsody", because: "both install `netsody` binaries"
 
   def install

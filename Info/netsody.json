@@ -1,0 +1,95 @@
+{
+  "name": "netsody",
+  "full_name": "netsody/tap/netsody",
+  "tap": "netsody/tap",
+  "oldnames": [],
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "Zero Trust Network Access for users, devices, services, and private networks",
+  "license": null,
+  "homepage": "https://netsody.io",
+  "versions": {
+    "stable": "0.1.0",
+    "head": null,
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://download.netsody.io/binaries/0.1.0/macos-arm64/netsody",
+      "tag": null,
+      "revision": null,
+      "using": null,
+      "checksum": null
+    }
+  },
+  "patches": [],
+  "revision": 0,
+  "version_scheme": 0,
+  "compatibility_version": null,
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
+  "bottle": {},
+  "pour_bottle_only_if": null,
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [],
+  "build_dependencies": [],
+  "dependencies": [],
+  "test_dependencies": [],
+  "recommended_dependencies": [],
+  "optional_dependencies": [],
+  "uses_from_macos": [],
+  "uses_from_macos_bounds": [],
+  "requirements": [],
+  "conflicts_with": [
+    "drasyl/tap/drasyl",
+    "netsody/tap/netsody-beta"
+  ],
+  "conflicts_with_reasons": [
+    "both install conflicting TUN devices",
+    "both install `netsody` binaries"
+  ],
+  "link_overwrite": [],
+  "caveats": "An API auth token has been created at:\n  $HOMEBREW_PREFIX/etc/netsody/auth.token\n\nTo use Netsody you must copy it into your home directory:\n  mkdir -p ~/.netsody\n  cp $HOMEBREW_PREFIX/etc/netsody/auth.token ~/.netsody/auth.token\n  chmod 600 ~/.netsody/auth.token\n",
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_formula": null,
+  "deprecation_replacement_cask": null,
+  "deprecate_args": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_formula": null,
+  "disable_replacement_cask": null,
+  "disable_args": null,
+  "post_install_steps": [],
+  "post_install_defined": true,
+  "service": {
+    "run": [
+      "/opt/homebrew/opt/netsody/bin/netsody",
+      "run"
+    ],
+    "run_type": "immediate",
+    "keep_alive": {
+      "always": true
+    },
+    "require_root": true,
+    "environment_variables": {
+      "RUST_BACKTRACE": "full"
+    },
+    "working_dir": "/opt/homebrew/etc/netsody",
+    "log_path": "/opt/homebrew/var/log/netsody.out.log",
+    "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
+  },
+  "tap_git_head": "d42780a65e8952ca298533a6f91e8088ebea1035",
+  "ruby_source_path": "Formula/netsody.rb",
+  "ruby_source_checksum": {
+    "sha256": "002313461af4c3efadf60a9e59f7c9a1e3efdee714f6ed4d319e903bc3c9e44f"
+  }
+}

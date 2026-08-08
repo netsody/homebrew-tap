@@ -1,0 +1,79 @@
+{
+  "name": "netsody-beta",
+  "full_name": "netsody/tap/netsody-beta",
+  "tap": "netsody/tap",
+  "oldnames": [],
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "Zero Trust Network Access for users, devices, services, and private networks",
+  "license": null,
+  "homepage": "https://netsody.io",
+  "versions": {
+    "stable": "1.0.0-rc.3",
+    "head": null,
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.3/netsody",
+      "tag": null,
+      "revision": null,
+      "using": null,
+      "checksum": "fb2229aab961a7cf43706705a771945cd9a26063d3e732f1a0691945a5b8be01"
+    }
+  },
+  "patches": [],
+  "revision": 0,
+  "version_scheme": 0,
+  "compatibility_version": null,
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
+  "bottle": {},
+  "pour_bottle_only_if": null,
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [],
+  "build_dependencies": [],
+  "dependencies": [],
+  "test_dependencies": [],
+  "recommended_dependencies": [],
+  "optional_dependencies": [],
+  "uses_from_macos": [],
+  "uses_from_macos_bounds": [],
+  "requirements": [],
+  "conflicts_with": [
+    "drasyl/tap/drasyl",
+    "netsody/tap/netsody"
+  ],
+  "conflicts_with_reasons": [
+    "both install conflicting TUN devices",
+    "both install `netsody` binaries"
+  ],
+  "link_overwrite": [],
+  "caveats": null,
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_formula": null,
+  "deprecation_replacement_cask": null,
+  "deprecate_args": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_formula": null,
+  "disable_replacement_cask": null,
+  "disable_args": null,
+  "post_install_steps": [],
+  "post_install_defined": false,
+  "service": null,
+  "tap_git_head": "d42780a65e8952ca298533a6f91e8088ebea1035",
+  "ruby_source_path": "Formula/netsody-beta.rb",
+  "ruby_source_checksum": {
+    "sha256": "722f1c8e8e05c0c2824e58c50083138be2387566c738fb859d180ec55d91ebec"
+  }
+}
