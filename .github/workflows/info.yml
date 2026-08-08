@@ -1,23 +1,40 @@
 name: Generated formula JSON
 on:
   push:
-    branches: main
+    branches: master
   pull_request:
+
+permissions:
+  contents: write
+
 jobs:
   json:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v6.0.2
+      # On a pull request, checkout resolves to the merge commit by default,
+      # which is a detached HEAD with nothing to push back to. Naming the source
+      # branch is what lets the commit at the end land on the pull request.
+      - uses: actions/checkout@v6.0.2
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
-    - name: brew info --json
-      run: |
-        rm -rf Info
-        mkdir -p Info
-        cd Formula
-        for formula in *.rb; do
-          brew info --json "$formula" | jq '.[0]? // .' > "../Info/${formula/%rb/json}"
-        done
-    - uses: stefanzweifel/git-auto-commit-action@v4.1.1
-      with:
-        commit_message: 'Generated formula JSON: `brew info --json <formula>`'
-        file_pattern: Info
+      # `brew info --json` refuses a bare path: a formula has to be in a tap for
+      # it to read. This action symlinks the checkout in as netsody/tap, which is
+      # also how the test-bot workflow gets at it, so the loop below can address
+      # the formulae by their tap names.
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: brew info --json
+        run: |
+          rm -rf Info
+          mkdir -p Info
+          for path in Formula/*.rb; do
+            name=$(basename "$path" .rb)
+            brew info --json "netsody/tap/$name" | jq '.[0]? // .' > "Info/$name.json"
+          done
+
+      - uses: stefanzweifel/git-auto-commit-action@v4.1.1
+        with:
+          commit_message: 'Generated formula JSON: `brew info --json <formula>`'
+          file_pattern: Info
