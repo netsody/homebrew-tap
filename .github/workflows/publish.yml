@@ -3,6 +3,18 @@ on:
   pull_request_target:
     types:
       - labeled
+
+# brew pr-pull needs actions: read to download the bottles artifact from the
+# tests.yml run, and issues/pull-requests: read for the labels, changed files
+# and "no long build conflict" checks it runs on the pull request. The
+# contents: write scope is what git-try-push uses to land the bottle commits
+# on master and to delete the branch at the end.
+permissions:
+  actions: read
+  contents: write
+  issues: read
+  pull-requests: read
+
 jobs:
   pr-pull:
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
