@@ -4,9 +4,6 @@ class Netsody < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
 
-  conflicts_with "drasyl/tap/drasyl", because: "both install conflicting TUN devices"
-  conflicts_with "netsody/tap/netsody-beta", because: "both install `netsody` binaries"
-
   # Dynamically determine operating system, architecture and matching artifact URL
   on_macos do
     on_arm do
@@ -33,6 +30,9 @@ class Netsody < Formula
       end
     end
   end
+
+  conflicts_with "drasyl/tap/drasyl", because: "both install conflicting TUN devices"
+  conflicts_with "netsody/tap/netsody-beta", because: "both install `netsody` binaries"
 
   service do
     run [opt_bin/"netsody", "run"]
