@@ -42,9 +42,9 @@ class Netsody < Formula
         args: [
           "-rsecurerandom",
           "-e",
-          "print SecureRandom.hex(24)"
+          "print SecureRandom.hex(24)",
         ],
-        stdout_path: "{{etc}}/netsody/auth.token"
+        stdout_path: "{{etc}}/netsody/auth.token",
       )
     end
     set_permissions "{{etc}}/netsody/auth.token", "0600"
