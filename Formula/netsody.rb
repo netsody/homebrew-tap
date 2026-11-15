@@ -1,4 +1,3 @@
-require "securerandom"
 require "etc"
 
 class Netsody < Formula
@@ -8,11 +7,31 @@ class Netsody < Formula
   conflicts_with "drasyl/tap/drasyl", because: "both install conflicting TUN devices"
   conflicts_with "netsody/tap/netsody-beta", because: "both install `netsody` binaries"
 
-  # Dynamically determine architecture and set appropriate URL
-  if Hardware::CPU.arm?
-    url "https://download.netsody.io/binaries/0.1.0/macos-arm64/netsody"
-  else
-    url "https://download.netsody.io/binaries/0.1.0/macos-amd64/netsody"
+  # Dynamically determine operating system, architecture and matching artifact URL
+  on_macos do
+    on_arm do
+      url "https://download.netsody.io/binaries/macos-arm64/0.1.0/netsody"
+      sha256 "ed72daf8dd386f5c24cc3b71c66515f8e8cda175c9bf2af177a02d9ec632346e"
+    end
+    on_intel do
+      url "https://download.netsody.io/binaries/macos-amd64/0.1.0/netsody"
+      sha256 "6d5f10ef68b20206c171ce07e17a2b6cb09a7ab9da27607192b31af4a0c927bf"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://download.netsody.io/binaries/linux-amd64/0.1.0/netsody"
+        sha256 "51d7b7e676bf6e8a23d3f7e32bcb34c4eeac3ed4599a897fbbfde332fd2ac368"
+      end
+    end
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://download.netsody.io/binaries/linux-arm64/0.1.0/netsody"
+        sha256 "a439743e6f4b0870645bd2dc83c2ed560726da777a6bfc3d45072c7b1808dacf"
+      end
+    end
   end
 
   service do
