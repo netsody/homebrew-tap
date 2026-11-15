@@ -35,14 +35,10 @@ class Netsody < Formula
     (var/"log").mkpath
   end
 
-  def post_install_steps
-    token_file = etc/"netsody/auth.token"
-
-    # Generate a random auth token if it doesn't already exist
-    unless token_file.exist?
-      token_file.write(SecureRandom.hex(24))
-      chmod 0600, token_file
-    end
+  post_install_steps do
+    # Generate a random auth token if it does not already exist.
+    write_file "{{etc}}/netsody/auth.token", ::SecureRandom.hex(24), overwrite: false
+    run "chmod", args: ["0600", "{{etc}}/netsody/auth.token"]
   end
 
   def caveats
