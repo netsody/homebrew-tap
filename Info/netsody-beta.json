@@ -9,20 +9,21 @@
   "license": null,
   "homepage": "https://netsody.io",
   "versions": {
-    "stable": "1.0.0-rc.4",
+    "stable": "1.0.0-rc.5",
     "head": null,
     "bottle": false
   },
   "urls": {
     "stable": {
-      "url": "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.4/netsody",
+      "url": "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.5/netsody",
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": "cef8516180eb2b00698ad1053de747eec10099e0900ad505eed13b13bc925ebd"
+      "checksum": "52a34f8042b697733aeb45a5f4ec4f7e65573139561c555e4c2b496671a3b943"
     }
   },
   "patches": [],
+  "local_patch_checksums": {},
   "revision": 0,
   "version_scheme": 0,
   "compatibility_version": null,
@@ -39,6 +40,7 @@
   "test_dependencies": [],
   "recommended_dependencies": [],
   "optional_dependencies": [],
+  "no_linkage_dependencies": [],
   "uses_from_macos": [],
   "uses_from_macos_bounds": [],
   "requirements": [],
@@ -71,9 +73,9 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "ca2f4bab8d7ac02c42283eca571caa9fd1809eef",
+  "tap_git_head": "65bb2fc028184a59fbdbe3240f3cc7ebd7c94dc0",
   "ruby_source_path": "Formula/netsody-beta.rb",
   "ruby_source_checksum": {
-    "sha256": "bb0b40ad1c893389b6be482ab6b1575e1928e0c3f67202811ae69dcd5b93d893"
+    "sha256": "a04e81b8af3042afa7c8d7d5d844944378d9b2b26f9ea24d6427186dc72f74e4"
   }
 }
