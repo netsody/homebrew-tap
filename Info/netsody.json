@@ -73,7 +73,7 @@
   "post_install_steps": [
     {
       "command": {
-        "path": "ruby"
+        "path": "openssl"
       },
       "stdout_path": {
         "path": "{{etc}}/netsody/auth.token"
@@ -87,9 +87,9 @@
       ],
       "type": "run",
       "args": [
-        "-rsecurerandom",
-        "-e",
-        "print SecureRandom.hex(24)"
+        "rand",
+        "-hex",
+        "48"
       ]
     },
     {
@@ -120,9 +120,9 @@
     "log_path": "/opt/homebrew/var/log/netsody.out.log",
     "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
   },
-  "tap_git_head": "2bd767c5a83b6b9f013df96777da5f05e7059617",
+  "tap_git_head": "82c79693b426bd6dc4ebfc6758cfb2807743500c",
   "ruby_source_path": "Formula/netsody.rb",
   "ruby_source_checksum": {
-    "sha256": "9ee6659e86e1f2f5162477342be948c732b630e70b2ddb728e46f92bb94db784"
+    "sha256": "d49684e6596966ac2c9cfb6e1f63c32db1c516a7a23a373372d254155d096551"
   }
 }
