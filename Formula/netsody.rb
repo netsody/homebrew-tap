@@ -35,7 +35,7 @@ class Netsody < Formula
     (var/"log").mkpath
   end
 
-  def post_install
+  def post_install_steps
     token_file = etc/"netsody/auth.token"
 
     # Generate a random auth token if it doesn't already exist
