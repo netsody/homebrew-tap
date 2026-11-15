@@ -1,35 +1,35 @@
 class NetsodyBeta < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
-  version "1.0.0-rc.4"
+  version "1.0.0-rc.5"
 
   on_macos do
     on_arm do
-      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.4/netsody"
-      sha256 "cef8516180eb2b00698ad1053de747eec10099e0900ad505eed13b13bc925ebd"
+      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.5/netsody"
+      sha256 "52a34f8042b697733aeb45a5f4ec4f7e65573139561c555e4c2b496671a3b943"
     end
 
     on_intel do
-      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.4/netsody"
-      sha256 "61c29136e3bda9c10379738a76a011666df2d3930f798a286442aec5585908a8"
+      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.5/netsody"
+      sha256 "16bd70691ecb4c693b17ee091a30f67da465bfa31b8048ef6ec2cd5f2a687c23"
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.4/netsody"
-        sha256 "dfe4edc9e09d7ac728d3208749aa2ebc6080f6fcae9d867dc1ea08292b98a1ed"
+        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.5/netsody"
+        sha256 "5c8fe5edb2f10e78b03f105827ef433263628158dda535efaa56c4d79f326b6d"
       end
     end
 
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.4/netsody"
-        sha256 "2299ee175703052fcc777426d198bb82c4ff3e9b189b12c0d186f9a0e928fee6"
+        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.5/netsody"
+        sha256 "37b950e7dc07a2411eb3528e28b1b68d549c2827e3b2d869ddea0754e5817b5d"
       else
-        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.4/netsody"
-        sha256 "f537714d3ac56e0e2a915080123cdbacd6e28801c79822c2bf107919d21c5529"
+        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.5/netsody"
+        sha256 "2db3732df38b57b1976387a1d96fe9ac19c3128b1cafe9305af578471354df76"
       end
     end
   end
