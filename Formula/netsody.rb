@@ -37,9 +37,15 @@ class Netsody < Formula
 
   post_install_steps do
     unless_path_exists "{{etc}}/netsody/auth.token" do
-      run "ruby",
-          args: ["-rsecurerandom", "-e", "print SecureRandom.hex(24)"],
-          stdout_path: "{{etc}}/netsody/auth.token"
+      run(
+        "ruby",
+        args: [
+          "-rsecurerandom",
+          "-e",
+          "print SecureRandom.hex(24)"
+        ],
+        stdout_path: "{{etc}}/netsody/auth.token"
+      )
     end
     set_permissions "{{etc}}/netsody/auth.token", "0600"
   end
