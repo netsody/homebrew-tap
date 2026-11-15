@@ -72,21 +72,34 @@
   "disable_args": null,
   "post_install_steps": [
     {
-      "path": {
+      "command": {
+        "path": "ruby"
+      },
+      "stdout_path": {
         "path": "{{etc}}/netsody/auth.token"
       },
-      "type": "write",
-      "content": "eb32a2b71fad09f502f6670daf3164f0a4a05acbcfd9eab5"
-    },
-    {
-      "command": {
-        "path": "chmod"
-      },
+      "guards": [
+        {
+          "path": "{{etc}}/netsody/auth.token",
+          "condition": "unless_exists",
+          "id": "1"
+        }
+      ],
       "type": "run",
       "args": [
-        "0600",
-        "{{etc}}/netsody/auth.token"
+        "-rsecurerandom",
+        "-e",
+        "print SecureRandom.hex(24)"
       ]
+    },
+    {
+      "paths": [
+        {
+          "path": "{{etc}}/netsody/auth.token"
+        }
+      ],
+      "permissions": "0600",
+      "type": "set_permissions"
     }
   ],
   "post_install_defined": false,
@@ -107,9 +120,9 @@
     "log_path": "/opt/homebrew/var/log/netsody.out.log",
     "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
   },
-  "tap_git_head": "724b6f2d75b38e8251c2d1af08a90e09dfecb2cc",
+  "tap_git_head": "58db075c92c9f7854c5c7e6c4114f9fd3d33a777",
   "ruby_source_path": "Formula/netsody.rb",
   "ruby_source_checksum": {
-    "sha256": "5cedaa43df344af38ba56021a319f1c29f1df3b488ad8148699feb8025708b4a"
+    "sha256": "c3e638481a646783f04dc6a4deadd99537cf5f99d555fc8c04e4b6c65b93a01d"
   }
 }
