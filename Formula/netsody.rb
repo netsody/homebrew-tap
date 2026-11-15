@@ -36,9 +36,12 @@ class Netsody < Formula
   end
 
   post_install_steps do
-    # Generate a random auth token if it does not already exist.
-    write_file "{{etc}}/netsody/auth.token", ::SecureRandom.hex(24), overwrite: false
-    run "chmod", args: ["0600", "{{etc}}/netsody/auth.token"]
+    unless_path_exists "{{etc}}/netsody/auth.token" do
+      run "ruby",
+          args: ["-rsecurerandom", "-e", "print SecureRandom.hex(24)"],
+          stdout_path: "{{etc}}/netsody/auth.token"
+    end
+    set_permissions "{{etc}}/netsody/auth.token", "0600"
   end
 
   def caveats
