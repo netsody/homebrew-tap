@@ -19,7 +19,7 @@
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": null
+      "checksum": "ed72daf8dd386f5c24cc3b71c66515f8e8cda175c9bf2af177a02d9ec632346e"
     }
   },
   "patches": [],
@@ -43,7 +43,18 @@
   "no_linkage_dependencies": [],
   "uses_from_macos": [],
   "uses_from_macos_bounds": [],
-  "requirements": [],
+  "requirements": [
+    {
+      "name": "macos",
+      "cask": null,
+      "download": null,
+      "version": null,
+      "contexts": [],
+      "specs": [
+        "stable"
+      ]
+    }
+  ],
   "conflicts_with": [
     "drasyl/tap/drasyl",
     "netsody/tap/netsody-beta"
@@ -108,9 +119,9 @@
     "log_path": "/opt/homebrew/var/log/netsody.out.log",
     "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
   },
-  "tap_git_head": "45b58d4e49b6c7473c22dfe4323749d4788ffd7e",
+  "tap_git_head": "58c1a4577d785e33a6dc59c05995e6211677a44c",
   "ruby_source_path": "Formula/netsody.rb",
   "ruby_source_checksum": {
-    "sha256": "3874b2175d32c8adff3d748267930f1370ce3dd27b481887bf22cc0b9489c218"
+    "sha256": "f336caa682646ed1ba5da9a83dd8dcfd16a1275a49c5fced29d136b9f391415f"
   }
 }
