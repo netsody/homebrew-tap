@@ -6,12 +6,12 @@ class NetsodyBeta < Formula
   on_macos do
     on_arm do
       url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.5/netsody"
-      sha256 "fee36af9d1b15b996bb891539c02e7a451824b6b7c6a5ac1a5de5c885b7d53ff"
+      sha256 "528a9c6db567d21922703234f46be5a090d0379438c93b2229ea532170a121c3"
     end
 
     on_intel do
       url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.5/netsody"
-      sha256 "7c9bbaf47f7ab69737e8c7968a099165dbe3c51886e53ac713005d8039a42cb4"
+      sha256 "565e728bf85b24961ac8da43c689a864fb3ccca72e8aa7a45c95f0f6fe4a7017"
     end
   end
 
@@ -19,17 +19,17 @@ class NetsodyBeta < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.5/netsody"
-        sha256 "0797d8d5610c7f263f8ddbaedc70d3d98e0fa43fff34002d77f69b5233e5e123"
+        sha256 "9f8cd31267b13711545b19dc50fd31fb607bbefbf7f0ed5eb77eeca235d72fd3"
       end
     end
 
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.5/netsody"
-        sha256 "c576c2b658c2eea5aba9c4e2b4c1ff0beacefd1776382b93feeef2653bc3ddf2"
+        sha256 "2a0d2184c27b85132772a0ca01e77b279368a5e76670442451ab13f53188a674"
       else
         url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.5/netsody"
-        sha256 "ef88b22aac3ef5cc6654165a31f635d4d761ba08926144b1f82f543cde87a8d2"
+        sha256 "8110ac85f4fbd8188611c9d0814651fc1c7bb7d92f092f38010204312643095c"
       end
     end
   end
