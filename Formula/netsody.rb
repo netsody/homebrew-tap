@@ -3,6 +3,7 @@ require "etc"
 class Netsody < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
+  depends_on :macos
 
   conflicts_with "drasyl/tap/drasyl", because: "both install conflicting TUN devices"
   conflicts_with "netsody/tap/netsody-beta", because: "both install `netsody` binaries"
@@ -15,8 +16,6 @@ class Netsody < Formula
     url "https://download.netsody.io/binaries/0.1.0/macos-amd64/netsody"
     sha256 "6d5f10ef68b20206c171ce07e17a2b6cb09a7ab9da27607192b31af4a0c927bf"
   end
-
-  depends_on :macos
 
   service do
     run [opt_bin/"netsody", "run"]
