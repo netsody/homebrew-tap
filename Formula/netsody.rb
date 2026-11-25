@@ -10,9 +10,13 @@ class Netsody < Formula
   # Dynamically determine architecture and set appropriate URL
   if Hardware::CPU.arm?
     url "https://download.netsody.io/binaries/0.1.0/macos-arm64/netsody"
+    sha256 "ed72daf8dd386f5c24cc3b71c66515f8e8cda175c9bf2af177a02d9ec632346e"
   else
     url "https://download.netsody.io/binaries/0.1.0/macos-amd64/netsody"
+    sha256 "6d5f10ef68b20206c171ce07e17a2b6cb09a7ab9da27607192b31af4a0c927bf"
   end
+
+  depends_on :macos
 
   service do
     run [opt_bin/"netsody", "run"]
@@ -28,6 +32,7 @@ class Netsody < Formula
   def install
     # Install the pre-built binary for stable releases
     bin.install "netsody"
+    chmod 0755, bin/"netsody"
 
     # Package the token generator so the declarative post-install step can run it.
     libexec.mkpath
