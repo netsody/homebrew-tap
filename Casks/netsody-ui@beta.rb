@@ -1,13 +1,13 @@
 cask "netsody-ui@beta" do
-  version "1.0.0-rc.4"
+  version "1.0.0-rc.5"
 
   on_arm do
-    sha256 "3603186d12acceced78df097217bf9b63f66490496ba59c913d3a0515f2aea17"
+    sha256 "17301069c0d1242fdcfe6f4e68d383022852400bf04a887ce2c82edd6675025c"
 
     url "https://download.netsody.io/binaries/macos-arm64/#{version}/Netsody%20UI.zip"
   end
   on_intel do
-    sha256 "7602205699dedef15b73bab9fa303dc570baf067baecbcc2a4388ac542d63e00"
+    sha256 "f63d6c25c1460b77ffb9dc17392e2bc43d846e4e830549817285010183e8dfcd"
 
     url "https://download.netsody.io/binaries/macos-amd64/#{version}/Netsody%20UI.zip"
   end
