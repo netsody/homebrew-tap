@@ -73,7 +73,7 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "58c1a4577d785e33a6dc59c05995e6211677a44c",
+  "tap_git_head": "96003802028ee4c2f75cba4e8b38d09050fe51a8",
   "ruby_source_path": "Formula/netsody-beta.rb",
   "ruby_source_checksum": {
     "sha256": "73507cda89ab56198e1c41469224236ab89b168efa6fdcc7f6994a6f7edd7bfa"
