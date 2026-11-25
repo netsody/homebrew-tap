@@ -19,7 +19,7 @@
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": null
+      "checksum": "ed72daf8dd386f5c24cc3b71c66515f8e8cda175c9bf2af177a02d9ec632346e"
     }
   },
   "patches": [],
@@ -43,7 +43,18 @@
   "no_linkage_dependencies": [],
   "uses_from_macos": [],
   "uses_from_macos_bounds": [],
-  "requirements": [],
+  "requirements": [
+    {
+      "name": "macos",
+      "cask": null,
+      "download": null,
+      "version": null,
+      "contexts": [],
+      "specs": [
+        "stable"
+      ]
+    }
+  ],
   "conflicts_with": [
     "drasyl/tap/drasyl",
     "netsody/tap/netsody-beta"
@@ -70,8 +81,27 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "post_install_steps": [],
-  "post_install_defined": true,
+  "post_install_steps": [
+    {
+      "command": {
+        "base": "libexec",
+        "path": "generate-auth-token"
+      },
+      "guards": [
+        {
+          "base": "etc",
+          "path": "netsody/auth.token",
+          "condition": "unless_exists",
+          "id": "1"
+        }
+      ],
+      "type": "run",
+      "args": [
+        "{{etc}}/netsody/auth.token"
+      ]
+    }
+  ],
+  "post_install_defined": false,
   "service": {
     "run": [
       "/opt/homebrew/opt/netsody/bin/netsody",
@@ -89,9 +119,9 @@
     "log_path": "/opt/homebrew/var/log/netsody.out.log",
     "error_log_path": "/opt/homebrew/var/log/netsody.err.log"
   },
-  "tap_git_head": "edbd32e460df48e2b3c20026880aed7e9da4b044",
+  "tap_git_head": "ae8226989b779682b10f7ff7bda31e0cb409deb2",
   "ruby_source_path": "Formula/netsody.rb",
   "ruby_source_checksum": {
-    "sha256": "002313461af4c3efadf60a9e59f7c9a1e3efdee714f6ed4d319e903bc3c9e44f"
+    "sha256": "bcdaf7bd32b44a6083ac8c271d3ed55a59c7571ffe86209636940c6d265c54d1"
   }
 }
