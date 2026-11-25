@@ -74,7 +74,7 @@ class Netsody < Formula
     system "#{bin}/netsody", "version"
 
     token_file = etc/"netsody/auth.token"
-    assert_predicate token_file, :exist?
+    assert_path_exists token_file
     assert_match(/\A[0-9a-f]{48}\z/, token_file.read)
     assert_equal 0600, token_file.stat.mode & 0777
   end
