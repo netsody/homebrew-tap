@@ -1,35 +1,35 @@
 class NetsodyBeta < Formula
   desc "Zero Trust Network Access for users, devices, services, and private networks"
   homepage "https://netsody.io"
-  version "1.0.0-rc.4"
+  version "1.0.0-rc.5"
 
   on_macos do
     on_arm do
-      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.4/netsody"
-      sha256 "cef8516180eb2b00698ad1053de747eec10099e0900ad505eed13b13bc925ebd"
+      url "https://download.netsody.io/binaries/macos-arm64/1.0.0-rc.5/netsody"
+      sha256 "5d95c8994445fda352852d105a04d25a08346c3107b49c614f18ebac9d57cbf6"
     end
 
     on_intel do
-      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.4/netsody"
-      sha256 "61c29136e3bda9c10379738a76a011666df2d3930f798a286442aec5585908a8"
+      url "https://download.netsody.io/binaries/macos-amd64/1.0.0-rc.5/netsody"
+      sha256 "0afd88b06935e3d8ad1884f9e81a2291c22dc594a9d316a257f546503a2b6d5a"
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.4/netsody"
-        sha256 "dfe4edc9e09d7ac728d3208749aa2ebc6080f6fcae9d867dc1ea08292b98a1ed"
+        url "https://download.netsody.io/binaries/linux-amd64/1.0.0-rc.5/netsody"
+        sha256 "5e2e6631548e9174981e6f867e6c668510621fe28db4d2b3c0adba704bc8abdb"
       end
     end
 
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.4/netsody"
-        sha256 "2299ee175703052fcc777426d198bb82c4ff3e9b189b12c0d186f9a0e928fee6"
+        url "https://download.netsody.io/binaries/linux-arm64/1.0.0-rc.5/netsody"
+        sha256 "f8574e0e1e348ab44346d4d75cf3949091331b9bfaf47982cd68500bfa5125ec"
       else
-        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.4/netsody"
-        sha256 "f537714d3ac56e0e2a915080123cdbacd6e28801c79822c2bf107919d21c5529"
+        url "https://download.netsody.io/binaries/linux-armv7/1.0.0-rc.5/netsody"
+        sha256 "99604f2b6e32fe03d74493d5b2b345378f56e3fcc78c5458674f9a7e14facf7e"
       end
     end
   end
