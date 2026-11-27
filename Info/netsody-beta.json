@@ -19,7 +19,7 @@
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": "60d6c652316d56018b3cf483215bad58b573a718b209069fba7b88c36a75360f"
+      "checksum": "5d95c8994445fda352852d105a04d25a08346c3107b49c614f18ebac9d57cbf6"
     }
   },
   "patches": [],
@@ -73,9 +73,9 @@
   "post_install_steps": [],
   "post_install_defined": false,
   "service": null,
-  "tap_git_head": "22a58f792f0360af0174e03448f74de188d9fed3",
+  "tap_git_head": "f7372ad3c3d18ed4d342fd1bdf12d7bfe2da1036",
   "ruby_source_path": "Formula/netsody-beta.rb",
   "ruby_source_checksum": {
-    "sha256": "39a046fe5a555cf15cdd46c4fcefad24219da7a6440c19e32fb98a009363ca79"
+    "sha256": "5240143ebdf6f8f2c6b5449b4b1e988c77f1df95ce1f5e3b144159cb3ff517e0"
   }
 }
